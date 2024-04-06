@@ -1,0 +1,20 @@
+import fs from "fs";
+import matter from "gray-matter";
+import path from "path";
+
+export const getPost = ({ slug }: { slug: string }) => {
+    const markdownFile = fs.readFileSync(
+      path.join("src/app/blogArticles", slug + ".mdx"),
+      "utf-8"
+    );
+  
+    console.log({ markdownFile });
+  
+    const { data: frontMatter, content } = matter(markdownFile);
+  
+    return {
+      frontMatter,
+      slug,
+      content,
+    };
+  }
