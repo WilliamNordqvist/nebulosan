@@ -4,7 +4,12 @@ import { getPost } from "@/app/getPost";
 import path from "path";
 
 export async function generateStaticParams() {
-  const files = fs.readdirSync(path.join("src/app/blogArticles"));
+  // const files = fs.readdirSync(path.join("src/app/blogArticles"));
+  const files = fs.readdirSync(
+    path.join(process.cwd(), "src/app/blogArticles")
+  );
+
+  console.log({ files });
 
   const paths = files.map((filename) => ({
     slug: filename.replace(".mdx", ""),
@@ -15,6 +20,7 @@ export async function generateStaticParams() {
 
 export default function Post({ params: { id } }: { params: { id: string } }) {
   const { frontMatter, content } = getPost({ slug: id });
+  console.log({ id });
 
   return (
     <div className="pb-10">

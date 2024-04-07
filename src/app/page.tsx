@@ -4,16 +4,6 @@ import fs from "fs";
 import { getPost } from "./getPost";
 import path from "path";
 
-export async function generateStaticParams() {
-  const files = fs.readdirSync(path.join("src/app/blogArticles"));
-
-  const paths = files.map((filename) => ({
-    slug: filename.replace(".mdx", ""),
-  }));
-
-  return paths;
-}
-
 export default function Home() {
   const posts = fs
     .readdirSync(path.join("src/app/blogArticles"))
