@@ -4,12 +4,9 @@ import { getPost } from "@/app/getPost";
 import path from "path";
 
 export async function generateStaticParams() {
-  // const files = fs.readdirSync(path.join("src/app/blogArticles"));
   const files = fs.readdirSync(
     path.join(process.cwd(), "src/app/blogArticles")
   );
-
-  console.log({ files });
 
   const paths = files.map((filename) => ({
     slug: filename.replace(".mdx", ""),
@@ -20,7 +17,6 @@ export async function generateStaticParams() {
 
 export default function Post({ params: { id } }: { params: { id: string } }) {
   const { frontMatter, content } = getPost({ slug: id });
-  console.log({ id });
 
   return (
     <div className="pb-10">
@@ -34,7 +30,7 @@ export default function Post({ params: { id } }: { params: { id: string } }) {
       </div>
 
       <div
-        className="h-[75vh] w-full max-w-6xl mx-auto bg-white bg-cover mt-8 rounded-md "
+        className="h-[75vh] w-full max-w-6xl mx-auto bg-white bg-cover mt-8 rounded-md bg-center"
         style={{
           backgroundImage: `url('${frontMatter.img}')`,
         }}
@@ -42,7 +38,7 @@ export default function Post({ params: { id } }: { params: { id: string } }) {
 
       <div className="container max-w-5xl mx-auto -mt-32 ">
         <div className="mx-0 sm:mx-6">
-          <div className="bg-white w-full p-8 md:p-24 text-xl md:text-2xl text-gray-800 leading-normal rounded-md *:py-6">
+          <div className="bg-white w-full  p-24 text-2xl text-gray-800 leading-normal rounded-md *:py-6 sm:text-base sm:p-4">
             <MDXRemote source={content} />
           </div>
         </div>

@@ -49,8 +49,8 @@ export default function Home() {
         </div>
       </section>
       <section className="h-auto min-h-full flex flex-col ">
-        <h2 className="mb-10 ml-5 font-bold text-gray-900 text-5xl text-center">
-          Nyheter
+        <h2 className="my-10 ml-5 font-bold text-gray-900 text-5xl text-center">
+          Aktuellt
         </h2>
         <div className="h-auto grow flex justify-center items-center flex-wrap mb-16 sm:mb-0 *:mx-5 *:mb-8 *:sm:mx-0">
           {posts.map(({ slug, title, description, img }) => (
@@ -66,7 +66,7 @@ export default function Home() {
       </section>
 
       <div>
-        <footer className="flex justify-between items-center flex-col h-[400px] bg-gray-900 rounded-lg p-8 text-slate-100">
+        <footer className="flex justify-between items-center flex-col h-auto bg-gray-900 rounded-lg p-8 text-slate-100 sm:text-sm">
           <div className="text-center">
             <p className="mb-4 text-xl">BRF Nebulosan 9 Styrelsemedlemmar</p>
             <p>Susann Elisabeth Hillbäck: Ordinarie ledamot,ordförande</p>
