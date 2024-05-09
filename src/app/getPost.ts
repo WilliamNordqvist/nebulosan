@@ -8,8 +8,6 @@ export const getPost = ({ slug }: { slug: string }) => {
       "utf-8"
     );
   
-    console.log({ markdownFile });
-  
     const { data: frontMatter, content } = matter(markdownFile);
   
     return {

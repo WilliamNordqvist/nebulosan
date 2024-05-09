@@ -53,15 +53,17 @@ export default function Home() {
           Aktuellt
         </h2>
         <div className="h-auto grow flex justify-center items-center flex-wrap mb-16 sm:mb-0 *:mx-5 *:mb-8 *:sm:mx-0">
-          {posts.map(({ slug, title, description, img }) => (
-            <BlogCard
-              key={slug}
-              title={title}
-              text={description}
-              img={img}
-              href={slug}
-            />
-          ))}
+          <BlogCard
+            title="Viktiga Dokument"
+            text="Här har vi samlat allt
+            material som är relevant för dig som medlem i vår förening. Vi strävar
+            efter att hålla denna sida uppdaterad med den senaste informationen för
+            att du enkelt ska kunna ta del av den när du behöver. Tveka inte att
+            kontakta styrelsen om du har några frågor eller om du behöver hjälp med
+            att hitta ett specifikt dokument."
+            img="https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            href="/dokument"
+          />
         </div>
       </section>
 
