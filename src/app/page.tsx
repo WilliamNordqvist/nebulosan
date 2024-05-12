@@ -54,7 +54,7 @@ export default function Home() {
         </h2>
         <div className="h-auto grow flex justify-center items-center flex-wrap mb-16 sm:mb-0 *:mx-5 *:mb-8 *:sm:mx-0">
           <BlogCard
-            title="Viktiga Dokument"
+            title="Dokument"
             text="Här har vi samlat allt
             material som är relevant för dig som medlem i vår förening. Vi strävar
             efter att hålla denna sida uppdaterad med den senaste informationen för
@@ -63,6 +63,17 @@ export default function Home() {
             att hitta ett specifikt dokument."
             img="https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             href="/dokument"
+          />
+        </div>
+        <div className="h-auto grow flex justify-center items-center flex-wrap mb-16 sm:mb-0 *:mx-5 *:mb-8 *:sm:mx-0">
+          <BlogCard
+            title="Viktiga Datum"
+            text="Denna sida tillhandahåller en sammanställning av alla viktiga datum för
+            vår bostadsrättsförening. Informationen här kommer att uppdateras
+            regelbundet för att säkerställa att du alltid har tillgång till de
+            senaste och mest relevanta datumen."
+            img="https://images.unsplash.com/photo-1608228079968-c7681afb8f1d?q=80&w=3538&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            href="/datum"
           />
         </div>
       </section>
