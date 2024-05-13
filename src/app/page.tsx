@@ -1,23 +1,23 @@
 import { BlogCard } from "./components/blogCard";
 import Image from "next/image";
-import fs from "fs";
-import { getPost } from "./getPost";
-import path from "path";
+// import fs from "fs";
+// import { getPost } from "./getPost";
+// import path from "path";
 
 export default function Home() {
-  const posts = fs
-    .readdirSync(path.join("src/app/blogArticles"))
-    .map((slug) => {
-      const post = getPost({ slug: slug.replace(".mdx", "") });
-      return {
-        title: post.frontMatter.title,
-        description: post.frontMatter.description,
-        date: post.frontMatter.date,
-        img: post.frontMatter.img,
-        slug: "/blog/" + slug.replace(".mdx", ""),
-      };
-    })
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  // const posts = fs
+  //   .readdirSync(path.join("src/app/blogArticles"))
+  //   .map((slug) => {
+  //     const post = getPost({ slug: slug.replace(".mdx", "") });
+  //     return {
+  //       title: post.frontMatter.title,
+  //       description: post.frontMatter.description,
+  //       date: post.frontMatter.date,
+  //       img: post.frontMatter.img,
+  //       slug: "/blog/" + slug.replace(".mdx", ""),
+  //     };
+  //   })
+  //   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
     <div className="h-full *:p-10 *:sm:p-2">
@@ -52,6 +52,7 @@ export default function Home() {
         <h2 className="my-10 ml-5 font-bold text-gray-900 text-5xl text-center">
           Aktuellt
         </h2>
+
         <div className="h-auto grow flex justify-center items-center flex-wrap mb-16 sm:mb-0 *:mx-5 *:mb-8 *:sm:mx-0">
           <BlogCard
             title="Dokument"
@@ -64,8 +65,7 @@ export default function Home() {
             img="https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             href="/dokument"
           />
-        </div>
-        <div className="h-auto grow flex justify-center items-center flex-wrap mb-16 sm:mb-0 *:mx-5 *:mb-8 *:sm:mx-0">
+
           <BlogCard
             title="Viktiga Datum"
             text="Denna sida tillhandahåller en sammanställning av alla viktiga datum för
@@ -74,6 +74,17 @@ export default function Home() {
             senaste och mest relevanta datumen."
             img="https://images.unsplash.com/photo-1608228079968-c7681afb8f1d?q=80&w=3538&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             href="/datum"
+          />
+
+          <BlogCard
+            title="För allas trivsel"
+            text="Denna sida är dedikerad till att främja en harmonisk och välkomnande
+            miljö i vår bostadsrättsförening. Här finner du riktlinjer och tips på
+            hur vi tillsammans kan bidra till en positiv atmosfär där alla känner
+            sig hemma. Vi värdesätter respekt, hänsyn och samarbete mellan alla
+            medlemmar för att säkerställa att vår gemenskap trivs och frodas."
+            img="https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            href="/trivsel"
           />
         </div>
       </section>
