@@ -10,7 +10,7 @@ type Props = {
 
 export const BlogCard = ({ img, title, text, href }: Props) => {
   return (
-    <div className="h-[600px] flex justify-between max-w-[30rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg ">
+    <div className="h-auto min-h-[600px] flex justify-between max-w-[30rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg ">
       <div>
         <div className="relative h-[260px] mx-4 mt-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
           <Image
