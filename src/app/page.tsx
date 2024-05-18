@@ -24,8 +24,8 @@ export default function Home() {
       <section className="h-full">
         <div className="relative h-full rounded-3xl overflow-hidden shadow-2xl sm:rounded-lg">
           <Image
-            className="w-full h-full object-cover"
-            src="/stockholm.jpeg"
+            className="w-full h-full object-cover object-top"
+            src="/hero.jpg"
             alt="hero image stockholm"
             priority
             fill
